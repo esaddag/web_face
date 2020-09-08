@@ -25,7 +25,7 @@ SECRET_KEY = 'qocy5z=hpwnco))%v-ipr26uskbqh0cs(k6911-!r$sc-6=po%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["0.0.0.0","web-face.herokuapp.com"]
+ALLOWED_HOSTS = ["0.0.0.0", "web-face.herokuapp.com", "127.0.0.1"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'face_detector.apps.FaceDetectorConfig'
 ]
 
 MIDDLEWARE = [
