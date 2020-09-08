@@ -1,6 +1,6 @@
+# import necessary packages
 from django.shortcuts import render, redirect
 from django.views import generic
-# import necessary packages
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
@@ -16,8 +16,9 @@ import base64
 FACE_DETECTOR_PATH = "{base_path}/cascades/haarcascade_frontalface_default.xml".format(
 	base_path=os.path.abspath(os.path.dirname(__file__)))
 
-class MyIndexView(generic.View):
-	template_name = "face_detector/index.html"
+@csrf_exempt	
+def index(req):
+	return render(req, "face_detector/index.html")
 
 # find faces and draw it on the image
 @csrf_exempt
